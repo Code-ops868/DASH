@@ -35,7 +35,7 @@ with col2:
 st.markdown("---")
 
 ############### SOMANDO LUCRO POR CATEGORIA ################################
-profit_by_category= (selection_query.groupby(by=['CATEGORIA']).sum(numeric_only=True)[['LUCRO']])
+profit_by_category= int(selection_query.groupby(by=['CATEGORIA']).sum(numeric_only=True)[['LUCRO']])
 
 profit_by_category_barchart = xp.bar(profit_by_category,x="LUCRO",y=profit_by_category.index, title="Lucro por Categoria", color_discrete_sequence=["#17f50c"],)
 profit_by_category_barchart.update_layout(plot_bgcolor=("rgba(0,1,0,0)"),xaxis=(dict(showgrid=False)))
