@@ -49,7 +49,7 @@ st.markdown("---")
 coluna3, =st.columns(1)
 with coluna3:
     st.markdown("### :green[Linha de Lucro por Categoria]")
-    st.line_chart(profit_by_category)
+    st.bar_chart(profit_by_category)
  
 hide ="""
 <style>
