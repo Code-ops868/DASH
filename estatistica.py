@@ -21,8 +21,8 @@ category = st.sidebar.multiselect(":orange[Selecione uma Categorias]",options=DF
 selection_query =DF.query('CATEGORIA==@category ')
 
 ############################## SOMANDO OS TOTAIS DE CARTOES ###############################
-total_profit=round(selection_query['LUCRO'].sum())
-avg_rating =round(selection_query['MEDIA'].mean(),2)
+total_profit=round(selection_query['LUCRO'].sum(numeric_only=True))
+avg_rating =round(selection_query['MEDIA'].mean(numeric_only=True),2)
 ############ COLUNAS ##############################
 col1, col2 =st.columns(2)
 with col1:
