@@ -40,7 +40,7 @@ profit_by_category= (selection_query.groupby(by=['CATEGORIA']).sum(numeric_only=
 profit_by_category_barchart = xp.bar(profit_by_category,x="LUCRO",y=profit_by_category.index, title="Lucro por Categoria", color_discrete_sequence=["#17f50c"],)
 profit_by_category_barchart.update_layout(plot_bgcolor=("rgba(0,1,0,0)"),xaxis=(dict(showgrid=False)))
 
-profit_by_category_piechart = xp.pie(profit_by_category,names=profit_by_category.index,values="LUCRO",title="Media Percentual %",hole=.5, color=profit_by_category.index,
+profit_by_category_piechart = xp.pie(profit_by_category,names=profit_by_category.index,values="LUCRO",title="Media Percentual %",hole=.8, color=profit_by_category.index,
                   color_discrete_sequence=xp.colors.sequential.RdPu_r)
 coluna1, coluna2= st.columns(2)
 coluna1.plotly_chart(profit_by_category_barchart , use_container_width=True)
