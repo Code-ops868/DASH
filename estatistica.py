@@ -53,7 +53,7 @@ with coluna3:
  
 hide ="""
 <style>
-header {visibility:hidden}
+#header {visibility:hidden}
 footer {visibility:hidden}
 </style>
 
