@@ -21,8 +21,8 @@ category = st.sidebar.multiselect(":orange[Selecione uma Categorias]",options=DF
 selection_query =DF.query('CATEGORIA==@category ')
 
 ############################## SOMANDO OS TOTAIS DE CARTOES ###############################
-total_profit=(selection_query['LUCRO'].sum(numeric_only=True))
-avg_rating =round(selection_query['MEDIA'].mean(numeric_only=True),2)
+total_profit=(selection_query['LUCRO'].sum(numeric_only=False))
+avg_rating =round(selection_query['MEDIA'].mean(numeric_only=False),2)
 ############ COLUNAS ##############################
 col1, col2 =st.columns(2)
 with col1:
@@ -35,7 +35,7 @@ with col2:
 st.markdown("---")
 
 ############### SOMANDO LUCRO POR CATEGORIA ################################
-profit_by_category= (selection_query.groupby(by=['CATEGORIA']).sum(numeric_only=True)[['LUCRO']])
+profit_by_category= (selection_query.groupby(by=['CATEGORIA']).sum(numeric_only=False)[['LUCRO']])
 
 profit_by_category_barchart = xp.bar(profit_by_category,x="LUCRO",y=profit_by_category.index, title="Lucro por Categoria", color_discrete_sequence=["#17f50c"],)
 profit_by_category_barchart.update_layout(plot_bgcolor=("rgba(0,1,0,0)"),xaxis=(dict(showgrid=False)))
