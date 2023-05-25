@@ -4,7 +4,7 @@ import plotly.express as xp
 import openpyxl as op
 
 st.set_page_config(page_title="DashBoard de Vendas",page_icon=":bar_chart:",layout="wide", initial_sidebar_state="expanded")
-st.title(":green[DashBoard de Vendas],:bar_chart:")
+st.title(":green[DashBoard de Vendas]:bar_chart:")
 #st.title(":bar_chart:")
 st.markdown("---")
 df =pd.read_excel(
